@@ -1,0 +1,148 @@
+.dashboard-page{
+    width:100%;
+}
+
+.welcome-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.welcome-section h1{
+    font-size:38px;
+    color:#111827;
+    margin-bottom:10px;
+}
+
+.welcome-section p{
+    color:#6b7280;
+    font-size:18px;
+}
+
+.search-box{
+    width:320px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:white;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+    outline:none;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.stats-card{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.stats-card:hover{
+    transform:translateY(-8px);
+}
+
+.stats-icon{
+    font-size:34px;
+    color:#4F46E5;
+    margin-bottom:15px;
+}
+
+.stats-card h2{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.stats-card p{
+    color:#6b7280;
+}
+
+.section{
+    background:white;
+    margin-bottom:30px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.section h2{
+    margin-bottom:20px;
+    color:#111827;
+}
+
+.action-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.action-buttons button{
+    padding:12px 22px;
+    border:none;
+    background:#4F46E5;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.action-buttons button:hover{
+    background:#4338CA;
+}
+
+.pdf-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.pdf-item{
+    padding:15px;
+    border-radius:10px;
+    background:#EEF2FF;
+}
+
+.progress-container{
+    width:100%;
+    height:15px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:15px;
+}
+
+.progress-bar{
+    width:75%;
+    height:100%;
+    background:#4F46E5;
+}
+
+.activity-list{
+    padding-left:20px;
+}
+
+.activity-list li{
+    margin-bottom:12px;
+}
+
+@media(max-width:768px){
+
+.welcome-section{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.search-box{
+    width:100%;
+}
+
+}

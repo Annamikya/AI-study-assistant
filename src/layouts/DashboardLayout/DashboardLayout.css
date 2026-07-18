@@ -1,19 +1,17 @@
-.dashboard-layout {
-  min-height: 100vh;
-  background: #f5f7fb;
+.dashboard-layout{
+    display:flex;
 }
 
-.dashboard-content {
-  margin-left: 250px;
-  margin-top: 70px;
-  padding: 30px;
-  min-height: calc(100vh - 70px);
-  transition: all 0.3s ease;
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
-@media (max-width: 768px) {
-  .dashboard-content {
-    margin-left: 80px;
-    padding: 20px;
-  }
+.page-content{
+    padding:25px;
+    flex:1;
+    overflow-y:auto;
 }

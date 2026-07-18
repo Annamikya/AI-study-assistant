@@ -2,26 +2,18 @@ import "./DashboardLayout.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
-
-
 function DashboardLayout({ children }) {
   return (
     <div className="dashboard-layout">
-
-      {/* Top Navigation */}
-      <Navbar />
-      
-
-      {/* Sidebar */}
       <Sidebar />
 
-      
+      <div className="main-content">
+        <Navbar />
 
-      {/* Main Content */}
-      <main className="dashboard-content">
-        {children}
-      </main>
-
+        <div className="page-content">
+          {children}
+        </div>
+      </div>
     </div>
   );
 }

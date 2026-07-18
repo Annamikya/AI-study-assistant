@@ -1,11 +1,7 @@
 import "./Sidebar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
-  FaHome,
   FaFilePdf,
-  FaUpload,
-  FaRobot,
-  FaStickyNote,
   FaLayerGroup,
   FaQuestionCircle,
   FaUser,
@@ -21,57 +17,72 @@ function Sidebar() {
       </div>
 
       <ul className="sidebar-menu">
+
         <li>
-          <FaHome className="icon" />
-          <Link to="/dashboard">Dashboard</Link>
+          <NavLink
+            to="/mypdfs"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+          >
+            <FaFilePdf className="icon" />
+            <span>My PDFs</span>
+          </NavLink>
+        </li>
+            <li>
+  <NavLink
+    to="/flashcards"
+    className={({ isActive }) =>
+      isActive ? "sidebar-link active" : "sidebar-link"
+    }
+  >
+    <FaLayerGroup className="icon" />
+    <span>Flashcards</span>
+  </NavLink>
+</li>
+
+        <li>
+          <NavLink
+            to="/quiz"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+          >
+            <FaQuestionCircle className="icon" />
+            <span>Quiz</span>
+          </NavLink>
         </li>
 
         <li>
-          <FaUpload className="icon" />
-          
-          <Link to="/upload">Upload</Link>
+          <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+          >
+            <FaUser className="icon" />
+            <span>Profile</span>
+          </NavLink>
         </li>
 
         <li>
-          <FaFilePdf className="icon" />
-          <span>My PDFs</span>
+          <NavLink
+            to="/settings"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link active" : "sidebar-link"
+            }
+          >
+            <FaCog className="icon" />
+            <span>Settings</span>
+          </NavLink>
         </li>
 
-        <li>
-          <FaRobot className="icon" />
-          <span>AI Chat</span>
-        </li>
-
-        <li>
-          <FaStickyNote className="icon" />
-          <span>Notes</span>
-        </li>
-
-        <li>
-          <FaLayerGroup className="icon" />
-          <span>Flashcards</span>
-        </li>
-
-        <li>
-          <FaQuestionCircle className="icon" />
-          <span>Quiz</span>
-        </li>
-
-        <li>
-          <FaUser className="icon" />
-          <span>Profile</span>
-        </li>
-
-        <li>
-          <FaCog className="icon" />
-          <span>Settings</span>
-        </li>
       </ul>
 
       <div className="sidebar-footer">
         <button className="logout-btn">
           <FaSignOutAlt />
-          Logout
+          <span>Logout</span>
         </button>
       </div>
     </aside>

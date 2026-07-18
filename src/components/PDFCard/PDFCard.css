@@ -1,0 +1,59 @@
+.pdf-card{
+    background:#ffffff;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.pdf-card:hover{
+    transform:translateY(-5px);
+}
+
+.pdf-icon{
+    font-size:50px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.pdf-card h3{
+    color:#111827;
+    margin-bottom:15px;
+}
+
+.pdf-card p{
+    color:#6b7280;
+    margin:8px 0;
+}
+
+.pdf-buttons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+.open-btn{
+    background:#4f46e5;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.open-btn:hover{
+    background:#4338ca;
+}
+
+.delete-btn{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}

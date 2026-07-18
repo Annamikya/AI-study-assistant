@@ -1,0 +1,77 @@
+.summary-page {
+    padding: 25px;
+}
+
+.summary-header {
+    margin-bottom: 25px;
+}
+
+.summary-header h1 {
+    font-size: 32px;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.summary-header p {
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.summary-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.summary-card h2 {
+    margin-bottom: 20px;
+    color: #4f46e5;
+}
+
+.summary-card p {
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 20px;
+}
+
+.summary-card ul {
+    margin-left: 20px;
+    color: #374151;
+    line-height: 2;
+}
+
+.summary-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.copy-btn,
+.download-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.copy-btn {
+    background: #4f46e5;
+    color: white;
+}
+
+.copy-btn:hover {
+    background: #4338ca;
+}
+
+.download-btn {
+    background: #10b981;
+    color: white;
+}
+
+.download-btn:hover {
+    background: #059669;
+}

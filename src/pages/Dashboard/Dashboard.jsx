@@ -55,7 +55,10 @@ function Dashboard() {
             <FaQuestionCircle className="stats-icon" />
             <h2>8</h2>
             <p>Quizzes</p>
+
           </div>
+
+          
 
         </div>
 

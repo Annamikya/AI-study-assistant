@@ -1,0 +1,34 @@
+.quiz-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    max-width:700px;
+    margin:auto;
+}
+
+.quiz-card h2{
+    margin-bottom:25px;
+    color:#1f2937;
+}
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.options button{
+    padding:15px;
+    border:2px solid #e5e7eb;
+    background:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.options button:hover{
+    background:#4f46e5;
+    color:white;
+}

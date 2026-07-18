@@ -123,3 +123,14 @@ display:block;
 }
 
 }
+.navbar {
+  height: 70px;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}

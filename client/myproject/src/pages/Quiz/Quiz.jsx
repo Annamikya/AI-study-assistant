@@ -1,5 +1,5 @@
 import "./Quiz.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import DashboardLayout from "../../layouts/DashboardLayout/DashboardLayout";
 
@@ -13,31 +13,33 @@ function Quiz() {
 
   const pdfId = localStorage.getItem("pdfId");
 
-  useEffect(() => {
-    fetchQuiz();
-  }, []);
-
-  const fetchQuiz = async () => {
+  const fetchQuiz = useCallback(async () => {
     try {
       const res = await axios.post(
         "https://ai-study-assistant-backend-9lrh.onrender.com/api/quiz/generate",
         { pdfId }
       );
+
       console.log("Quiz API Response:", res.data);
-
       setQuestions(res.data.quiz.questions);
-
     } catch (err) {
-      console.log("Quiz Error:", err.response?.data || err.message);
+      console.log(
+        "Quiz Error:",
+        err.response?.data || err.message
+      );
     }
-  };
+  }, [pdfId]);
+
+  useEffect(() => {
+    fetchQuiz();
+  }, [fetchQuiz]);
 
   const handleNext = () => {
     const updatedAnswers = [...answers, selected];
     setAnswers(updatedAnswers);
 
     if (selected === questions[current].answer) {
-      setScore(score + 1);
+      setScore((previousScore) => previousScore + 1);
     }
 
     setSelected("");
@@ -45,7 +47,7 @@ function Quiz() {
     if (current + 1 === questions.length) {
       setFinished(true);
     } else {
-      setCurrent(current + 1);
+      setCurrent((previousCurrent) => previousCurrent + 1);
     }
   };
 
@@ -76,9 +78,7 @@ function Quiz() {
   return (
     <DashboardLayout>
       <div className="quiz-page">
-
         <div className="quiz-card">
-
           <h2>
             Question {current + 1} / {questions.length}
           </h2>
@@ -86,9 +86,7 @@ function Quiz() {
           <h3>{q.question}</h3>
 
           {q.options.map((option, index) => (
-
             <label key={index} className="option">
-
               <input
                 type="radio"
                 name="quiz"
@@ -98,9 +96,7 @@ function Quiz() {
               />
 
               {option}
-
             </label>
-
           ))}
 
           <button
@@ -112,9 +108,7 @@ function Quiz() {
               ? "Finish Quiz"
               : "Next"}
           </button>
-
         </div>
-
       </div>
     </DashboardLayout>
   );

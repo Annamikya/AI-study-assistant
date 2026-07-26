@@ -14,7 +14,7 @@ function Summary() {
     const generateSummary = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/summary/generate",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/summary/generate",
         {
           pdfId: id,
         }

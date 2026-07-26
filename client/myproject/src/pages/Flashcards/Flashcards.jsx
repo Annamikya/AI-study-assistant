@@ -23,7 +23,7 @@ function Flashcards() {
       }
 
       const res = await axios.get(
-        `http://localhost:5000/api/flashcards/${pdfId}`
+        `https://ai-study-assistant-backend-9lrh.onrender.com/api/flashcards/${pdfId}`
       );
 
       setCards(res.data.flashcards.cards);

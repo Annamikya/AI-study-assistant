@@ -50,7 +50,7 @@ function Notes() {
       }
 
       const response = await axios.get(
-        `http://localhost:5000/api/notes/${pdfId}`,
+        `https://ai-study-assistant-backend-9lrh.onrender.com/api/notes/${pdfId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -16,7 +16,7 @@ function SelectFlashcardPDF() {
 
   const fetchPDFs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/pdf");
+      const res = await axios.get("https://ai-study-assistant-backend-9lrh.onrender.com/api/pdf");
 
       setPdfs(res.data.pdfs || []);
     } catch (err) {
@@ -36,7 +36,7 @@ function SelectFlashcardPDF() {
       localStorage.setItem("flashcardPdfId", pdfId);
 
       const res = await axios.post(
-        "http://localhost:5000/api/flashcards/generate",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/flashcards/generate",
         {
           pdfId,
         }

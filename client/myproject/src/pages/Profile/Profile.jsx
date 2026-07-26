@@ -50,7 +50,7 @@ function Profile() {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/api/users/profile",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/users/profile",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -106,7 +106,7 @@ function Profile() {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        "http://localhost:5000/api/users/profile",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/users/profile",
         {
           name: trimmedName,
         },

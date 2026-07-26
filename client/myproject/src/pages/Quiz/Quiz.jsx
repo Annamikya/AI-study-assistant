@@ -20,7 +20,7 @@ function Quiz() {
   const fetchQuiz = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/quiz/generate",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/quiz/generate",
         { pdfId }
       );
       console.log("Quiz API Response:", res.data);

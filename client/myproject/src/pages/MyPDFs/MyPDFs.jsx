@@ -25,7 +25,7 @@ function MyPDFs() {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/api/pdf",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/pdf",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -64,7 +64,7 @@ function MyPDFs() {
       const token = localStorage.getItem("token");
 
       const res = await axios.delete(
-        `http://localhost:5000/api/pdf/${id}`,
+        `https://ai-study-assistant-backend-9lrh.onrender.com/api/pdf/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

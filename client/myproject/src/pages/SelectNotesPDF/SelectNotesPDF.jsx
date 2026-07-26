@@ -37,7 +37,7 @@ function SelectNotesPDF() {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/api/pdf",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/pdf",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -105,7 +105,7 @@ function SelectNotesPDF() {
 
       // Selected PDF ke notes generate/update karo
       const response = await axios.post(
-        "http://localhost:5000/api/notes/generate",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/notes/generate",
         {
           pdfId,
         },

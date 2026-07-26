@@ -49,7 +49,7 @@ function Dashboard() {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/api/dashboard",
+        "https://ai-study-assistant-backend-9lrh.onrender.com/api/dashboard",
         {
           headers: {
             Authorization: `Bearer ${token}`,

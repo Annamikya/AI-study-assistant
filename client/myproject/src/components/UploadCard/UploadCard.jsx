@@ -12,11 +12,13 @@ function UploadCard() {
   const navigate = useNavigate();
 
   const handleBrowseClick = () => {
-    fileInputRef.current?.click();
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
   };
 
   const handleFileChange = (e) => {
-    const file = e.target.files?.[0];
+    const file = e.target.files && e.target.files[0];
 
     if (!file) {
       return;
@@ -53,7 +55,6 @@ function UploadCard() {
     }
 
     const formData = new FormData();
-
     formData.append("pdf", selectedFile);
     formData.append("title", title.trim());
 
@@ -65,19 +66,23 @@ function UploadCard() {
         formData,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: "Bearer " + token,
           },
         }
       );
 
       console.log("Upload response:", response.data);
 
-      if (response.data?.pdf?._id) {
+      if (
+        response.data &&
+        response.data.pdf &&
+        response.data.pdf._id
+      ) {
         localStorage.setItem("pdfId", response.data.pdf._id);
       }
 
       alert(
-        response.data?.message ||
+        (response.data && response.data.message) ||
           "PDF uploaded successfully"
       );
 
@@ -92,7 +97,7 @@ function UploadCard() {
     } catch (error) {
       console.error("Upload error:", error);
 
-      if (error.response?.status === 401) {
+      if (error.response && error.response.status === 401) {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
 
@@ -102,7 +107,9 @@ function UploadCard() {
       }
 
       alert(
-        error.response?.data?.message ||
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
           "PDF upload failed"
       );
     } finally {
@@ -116,11 +123,7 @@ function UploadCard() {
 
       <h2>Upload Your PDF</h2>
 
-      <p>
-        Upload your study material in PDF format.
-      </p>
-
-      
+      <p>Upload your study material in PDF format.</p>
 
       <br />
       <br />

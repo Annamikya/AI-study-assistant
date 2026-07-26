@@ -1,0 +1,43 @@
+.chat-message {
+    max-width: 75%;
+    margin: 18px 0;
+    padding: 15px 18px;
+    border-radius: 16px;
+    animation: fadeIn 0.3s ease;
+}
+
+.user-message {
+    margin-left: auto;
+    background: #4f46e5;
+    color: white;
+}
+
+.ai-message {
+    margin-right: auto;
+    background: #ffffff;
+    color: #1f2937;
+    border: 1px solid #e5e7eb;
+}
+
+.message-header {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.message-body p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

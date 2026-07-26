@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+client/myproject/node_modules/
+server/node_modules/
+
+# Environment variables
+.env
+client/myproject/.env
+server/.env
+
+# Uploaded files
+server/uploads/
+uploads/
+
+# React build
+client/myproject/build/
+client/myproject/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db

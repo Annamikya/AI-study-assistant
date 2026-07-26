@@ -1,0 +1,104 @@
+.select-notes-page {
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.select-notes-header {
+  margin-bottom: 30px;
+}
+
+.select-notes-header h1 {
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-size: 32px;
+}
+
+.select-notes-header p {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.notes-pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
+  gap: 24px;
+}
+
+.notes-pdf-card {
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px
+    rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.notes-pdf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px
+    rgba(0, 0, 0, 0.12);
+}
+
+.pdf-icon {
+  margin-bottom: 14px;
+  font-size: 46px;
+}
+
+.notes-pdf-card h3 {
+  margin-bottom: 14px;
+  color: #111827;
+  font-size: 20px;
+  word-break: break-word;
+}
+
+.notes-pdf-card p {
+  margin: 8px 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.notes-pdf-card button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.notes-pdf-card button:hover:not(:disabled) {
+  background: #4338ca;
+  transform: scale(1.02);
+}
+
+.notes-pdf-card button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+@media (max-width: 768px) {
+  .select-notes-page {
+    padding: 20px;
+  }
+
+  .select-notes-header h1 {
+    font-size: 26px;
+  }
+
+  .notes-pdf-grid {
+    grid-template-columns: 1fr;
+  }
+}

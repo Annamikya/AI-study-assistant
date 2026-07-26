@@ -1,0 +1,14 @@
+.summary-page{
+    padding:30px;
+}
+
+.summary-box{
+    margin-top:20px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    white-space:pre-wrap;
+    line-height:1.8;
+    font-size:17px;
+}

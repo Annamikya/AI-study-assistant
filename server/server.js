@@ -26,6 +26,7 @@ const app = express();
 app.use(cors({
     origin: [
       "http://localhost:3000",
+      "https://ai-study-assistant-seven-flame.vercel.app",
       process.env.FRONTEND_URL,
     ],
     credentials: true,

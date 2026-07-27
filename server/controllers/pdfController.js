@@ -51,7 +51,8 @@ const getUserPDFs = async (req, res) => {
   try {
     const pdfs = await PDF.find({
       uploadedBy: req.user.id,
-    }).sort({
+    }).populate("uploadedBy", "name email")
+    .sort({
       createdAt: -1,
     });
 

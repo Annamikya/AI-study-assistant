@@ -15,48 +15,63 @@ function SelectFlashcardPDF() {
   }, []);
 
   const fetchPDFs = async () => {
-    try {
-      const res = await axios.get("https://ai-study-assistant-backend-9lrh.onrender.com/api/pdf");
+  try {
+    const token = localStorage.getItem("token");
 
-      setPdfs(res.data.pdfs || []);
-    } catch (err) {
-      console.log("PDF FETCH ERROR:", err);
+    const res = await axios.get(
+      "https://ai-study-assistant-backend-9lrh.onrender.com/api/pdf",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
-      alert(
-        err.response?.data?.message ||
-          "Unable to fetch PDFs"
-      );
-    }
-  };
+    setPdfs(res.data.pdfs || []);
+  } catch (err) {
+    console.log("PDF FETCH ERROR:", err);
+
+    alert(
+      err.response?.data?.message ||
+      "Unable to fetch PDFs"
+    );
+  }
+};
 
   const generateFlashcards = async (pdfId) => {
-    try {
-      setLoadingId(pdfId);
+  try {
+    setLoadingId(pdfId);
 
-      localStorage.setItem("flashcardPdfId", pdfId);
+    localStorage.setItem("flashcardPdfId", pdfId);
 
-      const res = await axios.post(
-        "https://ai-study-assistant-backend-9lrh.onrender.com/api/flashcards/generate",
-        {
-          pdfId,
-        }
-      );
+    const token = localStorage.getItem("token");
 
-      alert(res.data.message);
+    const res = await axios.post(
+      "https://ai-study-assistant-backend-9lrh.onrender.com/api/flashcards/generate",
+      {
+        pdfId,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
-      navigate("/flashcards");
-    } catch (err) {
-      console.log("FLASHCARD GENERATION ERROR:", err);
+    alert(res.data.message);
 
-      alert(
-        err.response?.data?.message ||
-          "Flashcard Generation Failed"
-      );
-    } finally {
-      setLoadingId(null);
-    }
-  };
+    navigate("/flashcards");
+  } catch (err) {
+    console.log("FLASHCARD GENERATION ERROR:", err);
 
+    alert(
+      err.response?.data?.message ||
+      "Flashcard Generation Failed"
+    );
+  } finally {
+    setLoadingId(null);
+  }
+};
   return (
     <DashboardLayout>
       <div className="select-flashcard-page">

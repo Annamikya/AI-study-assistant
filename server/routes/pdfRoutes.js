@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const upload = require("../middleware/uploadMiddleware");
+const upload = require("../config/multer");
 const authMiddleware = require("../middleware/authMiddleware");
 
 const {
   uploadPDF,
-  getPDFs,
+  getUserPDFs,
+  getPDFById,
   deletePDF,
-  openPDF,
 } = require("../controllers/pdfController");
 
 // Upload PDF
@@ -23,7 +23,14 @@ router.post(
 router.get(
   "/",
   authMiddleware,
-  getPDFs
+  getUserPDFs
+);
+
+// Open logged-in user's PDF
+router.get(
+  "/:id",
+  authMiddleware,
+  getPDFById
 );
 
 // Delete logged-in user's PDF
@@ -31,13 +38,6 @@ router.delete(
   "/:id",
   authMiddleware,
   deletePDF
-);
-
-// Open logged-in user's PDF
-router.get(
-  "/:id",
-  authMiddleware,
-  openPDF
 );
 
 module.exports = router;

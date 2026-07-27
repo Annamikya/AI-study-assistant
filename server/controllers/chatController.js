@@ -15,38 +15,59 @@ exports.askQuestion = async (req, res) => {
   try {
     const { pdfId, question } = req.body;
 
-    if (!pdfId || !question) {
+    if (!pdfId || !question || !question.trim()) {
       return res.status(400).json({
         success: false,
-        message: "PDF ID and Question are required",
+        message: "PDF ID and question are required",
       });
     }
 
-    // Find PDF
-    const pdf = await PDF.findById(pdfId);
+    const pdf = await PDF.findOne({
+      _id: pdfId,
+      uploadedBy: req.user.id,
+    });
 
     if (!pdf) {
       return res.status(404).json({
         success: false,
-        message: "PDF not found",
+        message: "PDF not found or you do not have access to it",
       });
     }
 
-    // Read PDF
-    const pdfPath = path.join(__dirname, "..", pdf.filepath);
+    const pdfPath = path.join(
+      __dirname,
+      "..",
+      "uploads",
+      path.basename(pdf.filename)
+    );
+
+    console.log("========== CHAT DEBUG ==========");
+    console.log("PDF Path:", pdfPath);
+
+    if (!fs.existsSync(pdfPath)) {
+      return res.status(404).json({
+        success: false,
+        message:
+          "PDF file is missing from the server. Please upload the PDF again.",
+      });
+    }
 
     const buffer = fs.readFileSync(pdfPath);
-
-    // Extract Text
     const pdfData = await pdfParse(buffer);
 
-    // Limit text to avoid sending huge PDFs
+    if (!pdfData.text || !pdfData.text.trim()) {
+      return res.status(400).json({
+        success: false,
+        message: "No readable text was found in this PDF",
+      });
+    }
+
     const limitedText = pdfData.text.substring(0, 12000);
 
     const prompt = `
 You are an AI Study Assistant.
 
-Answer ONLY using the information present in the PDF.
+Answer only using the information present in the uploaded PDF.
 
 If the answer is not available in the PDF, reply exactly:
 
@@ -56,17 +77,16 @@ PDF Content:
 ${limitedText}
 
 Question:
-${question}
+${question.trim()}
 `;
 
-    // Groq API
     const completion = await groq.chat.completions.create({
       model: "llama-3.3-70b-versatile",
       messages: [
         {
           role: "system",
           content:
-            "You answer questions ONLY from the uploaded PDF. Never make up answers.",
+            "You answer questions only from the uploaded PDF. Do not make up answers.",
         },
         {
           role: "user",
@@ -76,24 +96,24 @@ ${question}
       temperature: 0.2,
     });
 
-    const answer = completion.choices[0].message.content;
+    const answer =
+      completion.choices?.[0]?.message?.content ||
+      "Unable to generate an answer.";
 
-    // Save Chat
     const chat = await Chat.create({
       pdfId,
-      question,
+      question: question.trim(),
       answer,
     });
 
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       chat,
     });
-
   } catch (error) {
     console.error("CHAT ERROR:", error);
 
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Unable to process question",
       error: error.message,

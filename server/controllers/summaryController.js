@@ -28,7 +28,12 @@ exports.generatePDFSummary = async (req, res) => {
     }
 
     // Build Absolute PDF Path
-    const pdfPath = path.join(__dirname, "..", pdf.filepath);
+    const pdfPath = path.join(
+  __dirname,
+  "..",
+  "uploads",
+  path.basename(pdf.filename)
+);
 
     console.log("========== SUMMARY DEBUG ==========");
     console.log("PDF Path:", pdfPath);
@@ -36,7 +41,7 @@ exports.generatePDFSummary = async (req, res) => {
     if (!fs.existsSync(pdfPath)) {
       return res.status(404).json({
         success: false,
-        message: "PDF file not found on server",
+        message: "PDF file is missing from the server. Please upload the PDF again.",
       });
     }
 

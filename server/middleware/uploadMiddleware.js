@@ -1,16 +1,26 @@
-const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
+const getPdfPath = (pdf) => {
+  if (!pdf || !pdf.filename) {
+    throw new Error("PDF filename is missing");
+  }
 
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
-});
+  const pdfPath = path.join(
+    __dirname,
+    "..",
+    "uploads",
+    path.basename(pdf.filename)
+  );
 
-const upload = multer({ storage });
+  return pdfPath;
+};
 
-module.exports = upload;
+const checkPdfExists = (pdfPath) => {
+  return fs.existsSync(pdfPath);
+};
+
+module.exports = {
+  getPdfPath,
+  checkPdfExists,
+};

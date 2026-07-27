@@ -1,81 +1,74 @@
-const PDF = require("../models/PDF");
-const fs = require("fs");
 const path = require("path");
+const fs = require("fs");
+const PDF = require("../models/PDF");
 
-// Upload PDF
-exports.uploadPDF = async (req, res) => {
+const uploadPDF = async (req, res) => {
   try {
-    console.log("Body:", req.body);
-    console.log("File:", req.file);
-    console.log("Logged-in user:", req.user);
-
     if (!req.file) {
       return res.status(400).json({
-        success: false,
-        message: "No PDF file uploaded",
-      });
-    }
-
-    if (!req.body.title) {
-      return res.status(400).json({
-        success: false,
-        message: "PDF title is required",
+        message: "Please select a PDF file",
       });
     }
 
     const pdf = await PDF.create({
-      title: req.body.title,
+      title: req.body.title || req.file.originalname,
       filename: req.file.filename,
-      filepath: req.file.path,
 
-      // User ID frontend se nahi lenge
-      // Logged-in user ke token se lenge
+      // Portable path for Windows and Linux
+      filepath: `uploads/${req.file.filename}`,
+
       uploadedBy: req.user.id,
     });
 
-    res.status(201).json({
-      success: true,
-      message: "PDF Uploaded Successfully",
+    return res.status(201).json({
+      message: "PDF uploaded successfully",
       pdf,
     });
   } catch (error) {
-    console.error("Upload Error:", error);
+    console.error("PDF upload error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Upload Failed",
+    if (req.file && req.file.path) {
+      try {
+        if (fs.existsSync(req.file.path)) {
+          fs.unlinkSync(req.file.path);
+        }
+      } catch (deleteError) {
+        console.error(
+          "Failed to remove uploaded file:",
+          deleteError.message
+        );
+      }
+    }
+
+    return res.status(500).json({
+      message: "PDF upload failed",
       error: error.message,
     });
   }
 };
 
-// Get only logged-in user's PDFs
-exports.getPDFs = async (req, res) => {
+const getUserPDFs = async (req, res) => {
   try {
     const pdfs = await PDF.find({
       uploadedBy: req.user.id,
-    })
-      .populate("uploadedBy", "name email")
-      .sort({ createdAt: -1 });
+    }).sort({
+      createdAt: -1,
+    });
 
-    res.status(200).json({
-      success: true,
-      count: pdfs.length,
+    return res.status(200).json({
       pdfs,
     });
   } catch (error) {
-    console.error("Fetch PDFs Error:", error);
+    console.error("Get PDFs error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Unable to Fetch PDFs",
+    return res.status(500).json({
+      message: "Failed to fetch PDFs",
       error: error.message,
     });
   }
 };
 
-// Delete only logged-in user's PDF
-exports.deletePDF = async (req, res) => {
+const getPDFById = async (req, res) => {
   try {
     const pdf = await PDF.findOne({
       _id: req.params.id,
@@ -84,66 +77,77 @@ exports.deletePDF = async (req, res) => {
 
     if (!pdf) {
       return res.status(404).json({
-        success: false,
-        message: "PDF not found or you are not allowed to delete it",
+        message: "PDF not found",
       });
     }
 
-    const filePath = path.resolve(pdf.filepath);
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "uploads",
+      path.basename(pdf.filename)
+    );
+
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({
+        message:
+          "PDF file is missing from the server. Please upload it again.",
+      });
+    }
+
+    return res.sendFile(filePath);
+  } catch (error) {
+    console.error("Get PDF error:", error);
+
+    return res.status(500).json({
+      message: "Failed to open PDF",
+      error: error.message,
+    });
+  }
+};
+
+const deletePDF = async (req, res) => {
+  try {
+    const pdf = await PDF.findOne({
+      _id: req.params.id,
+      uploadedBy: req.user.id,
+    });
+
+    if (!pdf) {
+      return res.status(404).json({
+        message: "PDF not found",
+      });
+    }
+
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "uploads",
+      path.basename(pdf.filename)
+    );
 
     if (fs.existsSync(filePath)) {
       fs.unlinkSync(filePath);
     }
 
-    await PDF.findByIdAndDelete(pdf._id);
+    await pdf.deleteOne();
 
-    res.status(200).json({
-      success: true,
-      message: "PDF Deleted Successfully",
+    return res.status(200).json({
+      message: "PDF deleted successfully",
     });
   } catch (error) {
-    console.error("Delete PDF Error:", error);
+    console.error("Delete PDF error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Delete Failed",
+    return res.status(500).json({
+      message: "Failed to delete PDF",
       error: error.message,
     });
   }
 };
 
-// Open only logged-in user's PDF
-exports.openPDF = async (req, res) => {
-  try {
-    const pdf = await PDF.findOne({
-      _id: req.params.id,
-      uploadedBy: req.user.id,
-    });
-
-    if (!pdf) {
-      return res.status(404).json({
-        success: false,
-        message: "PDF not found or you are not allowed to open it",
-      });
-    }
-
-    const filePath = path.resolve(pdf.filepath);
-
-    if (!fs.existsSync(filePath)) {
-      return res.status(404).json({
-        success: false,
-        message: "PDF file not found on server",
-      });
-    }
-
-    res.sendFile(filePath);
-  } catch (error) {
-    console.error("Open PDF Error:", error);
-
-    res.status(500).json({
-      success: false,
-      message: "Unable to open PDF",
-      error: error.message,
-    });
-  }
+module.exports = {
+  uploadPDF,
+  getUserPDFs,
+  getPDFById,
+  deletePDF,
 };

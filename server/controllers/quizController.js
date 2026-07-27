@@ -21,7 +21,6 @@ exports.generateQuizFromPDF = async (req, res) => {
       });
     }
 
-    // Check ObjectId validity
     if (!mongoose.Types.ObjectId.isValid(pdfId)) {
       return res.status(400).json({
         success: false,
@@ -29,30 +28,32 @@ exports.generateQuizFromPDF = async (req, res) => {
       });
     }
 
-    // Find PDF
     const pdf = await PDF.findById(pdfId);
 
     console.log("Found PDF:", pdf);
 
     if (!pdf) {
-      const allPDFs = await PDF.find().select("_id title");
-
-      console.log("Available PDFs:", allPDFs);
-
       return res.status(404).json({
         success: false,
         message: "PDF not found",
       });
     }
 
-    const pdfPath = path.join(__dirname, "..", pdf.filepath);
+    // ✅ Always create Linux-safe path using filename
+    const pdfPath = path.join(
+      __dirname,
+      "..",
+      "uploads",
+      path.basename(pdf.filename)
+    );
 
     console.log("PDF Path:", pdfPath);
 
     if (!fs.existsSync(pdfPath)) {
       return res.status(404).json({
         success: false,
-        message: "PDF file not found",
+        message:
+          "PDF file is missing from the server. Please upload the PDF again.",
       });
     }
 
@@ -60,7 +61,7 @@ exports.generateQuizFromPDF = async (req, res) => {
 
     const pdfData = await pdfParse(buffer);
 
-    if (!pdfData.text.trim()) {
+    if (!pdfData.text || !pdfData.text.trim()) {
       return res.status(400).json({
         success: false,
         message: "No text found inside PDF",
@@ -89,7 +90,7 @@ exports.generateQuizFromPDF = async (req, res) => {
 
   } catch (error) {
 
-    console.log("QUIZ ERROR:", error);
+    console.error("QUIZ ERROR:", error);
 
     return res.status(500).json({
       success: false,
@@ -98,4 +99,4 @@ exports.generateQuizFromPDF = async (req, res) => {
     });
 
   }
-};
+};[]

@@ -44,14 +44,21 @@ exports.generateFlashcards = async (req, res) => {
       });
     }
 
-    const pdfPath = path.join(__dirname, "..", pdf.filepath);
+    const pdfPath = path.join(
+  __dirname,
+  "..",
+  "uploads",
+  path.basename(pdf.filename)
+);
 
-    if (!fs.existsSync(pdfPath)) {
-      return res.status(404).json({
-        success: false,
-        message: "PDF file not found",
-      });
-    }
+console.log("Flashcard PDF Path:", pdfPath);
+
+if (!fs.existsSync(pdfPath)) {
+  return res.status(404).json({
+    success: false,
+    message: "PDF file is missing from the server. Please upload the PDF again.",
+  });
+}
 
     const buffer = fs.readFileSync(pdfPath);
 

@@ -1,16 +1,1 @@
-.upload-page{
-    padding:30px;
-}
-
-.upload-page h1{
-    color:#111827;
-    margin-bottom:10px;
-}
-
-.upload-page p{
-    color:#6b7280;
-    margin-bottom:30px;
-}
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.upload-page{min-height:calc(100vh - 80px);padding:28px;color:var(--text)}
+.upload-page{min-height:calc(100vh - 130px);display:flex;align-items:center;justify-content:center;padding:20px}

@@ -43,6 +43,3 @@
 .next-btn:hover {
     background: #4338ca;
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.flashcards-page{color:var(--text)!important}.flashcards-header h1{color:var(--text)!important}.flashcards-header p{color:var(--muted)!important}.navigation-buttons button{border-radius:12px!important}.prev-btn{background:rgba(255,255,255,.06)!important;color:var(--text)!important;border:1px solid var(--border)!important}.next-btn{background:linear-gradient(135deg,var(--accent),#80e6ff)!important;color:#06131d!important;border:0!important}

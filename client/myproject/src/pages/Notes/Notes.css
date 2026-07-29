@@ -120,6 +120,3 @@
     font-size: 20px;
   }
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.notes-page{color:var(--text)!important}.notes-header{background:linear-gradient(135deg,rgba(127,140,255,.14),rgba(105,240,214,.08))!important;border:1px solid var(--border)!important;border-radius:24px!important}.notes-header h1{color:var(--text)!important}.notes-header p{color:var(--muted)!important}.note-section{background:linear-gradient(145deg,rgba(16,34,57,.88),rgba(10,24,42,.84))!important;border:1px solid var(--border)!important;box-shadow:0 15px 40px rgba(0,0,0,.2)!important}.section-number{background:linear-gradient(135deg,var(--accent),#80e6ff)!important;color:#06131d!important}.section-content h2{color:var(--text)!important}.section-content li,.message-box h2{color:var(--muted)!important}

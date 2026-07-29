@@ -41,6 +41,3 @@
     text-align:center;
     margin-top:80px;
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.quiz-page{color:var(--text)!important}.progress-header{color:var(--muted)!important}.progress-container{background:rgba(255,255,255,.07)!important}.progress-bar{background:linear-gradient(90deg,var(--accent-2),var(--accent))!important;box-shadow:0 0 18px rgba(105,240,214,.25)}.quiz-result{background:linear-gradient(145deg,rgba(16,34,57,.94),rgba(10,24,42,.9))!important;border:1px solid var(--border)!important;color:var(--text)!important;box-shadow:var(--shadow)!important}

@@ -290,6 +290,3 @@
     width: 100%;
   }
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.settings-page{color:var(--text)!important}.settings-heading h1,.settings-card h2,.settings-card h3,.settings-card-heading{color:var(--text)!important}.settings-heading p,.settings-card p,.password-help-text{color:var(--muted)!important}.settings-card{background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.88))!important;border:1px solid var(--border)!important;box-shadow:var(--shadow)!important}.settings-heading-icon{color:var(--accent)!important;background:rgba(105,240,214,.1)!important}.settings-form-group label{color:var(--text)!important}.settings-form-group input,.password-input-wrapper input{background:rgba(4,14,27,.62)!important;color:var(--text)!important;border:1px solid var(--border)!important}.change-password-button,.settings-profile-button{background:linear-gradient(135deg,var(--accent),#80e6ff)!important;color:#06131d!important}.logout-card{border-color:rgba(255,111,145,.24)!important}.logout-icon{color:var(--danger)!important;background:rgba(255,111,145,.1)!important}.settings-logout-button{background:rgba(255,111,145,.12)!important;color:var(--danger)!important;border:1px solid rgba(255,111,145,.3)!important}

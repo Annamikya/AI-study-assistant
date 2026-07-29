@@ -55,6 +55,3 @@
     border-radius:8px;
     cursor:pointer;
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.chat-panel{background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.88))!important;border:1px solid var(--border)!important;border-radius:24px!important;box-shadow:var(--shadow)!important}.chat-box{background:rgba(4,14,27,.48)!important;border:1px solid var(--border)!important}.user-msg{background:linear-gradient(135deg,var(--accent-2),#6976e8)!important}.ai-msg{background:rgba(255,255,255,.06)!important;color:var(--text)!important;border:1px solid var(--border)!important}.chat-input input{background:rgba(4,14,27,.62)!important;color:var(--text)!important;border:1px solid var(--border)!important}.chat-input button{background:linear-gradient(135deg,var(--accent),#80e6ff)!important;color:#06131d!important;font-weight:800}

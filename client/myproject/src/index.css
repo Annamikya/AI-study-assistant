@@ -1,215 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
-
-:root {
-  --bg-primary: #070b17;
-  --bg-secondary: #0d1324;
-  --bg-card: rgba(17, 25, 45, 0.78);
-  --bg-card-light: rgba(255, 255, 255, 0.07);
-
-  --primary: #8b5cf6;
-  --primary-dark: #6d28d9;
-  --secondary: #22d3ee;
-  --accent: #f472b6;
-
-  --text-primary: #f8fafc;
-  --text-secondary: #a8b3cf;
-  --text-muted: #69758f;
-
-  --border: rgba(255, 255, 255, 0.12);
-  --border-hover: rgba(139, 92, 246, 0.55);
-
-  --shadow-sm: 0 8px 25px rgba(0, 0, 0, 0.22);
-  --shadow-md: 0 18px 45px rgba(0, 0, 0, 0.32);
-  --shadow-glow: 0 0 35px rgba(139, 92, 246, 0.25);
-
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-
-  --transition: 0.25s ease;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-html,
-body,
-#root {
-  min-height: 100%;
-  width: 100%;
-}
-
 body {
   margin: 0;
-  overflow-x: hidden;
-  font-family: "Inter", sans-serif;
-  color: var(--text-primary);
-  background:
-    radial-gradient(
-      circle at 10% 10%,
-      rgba(139, 92, 246, 0.16),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(34, 211, 238, 0.12),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 50% 100%,
-      rgba(244, 114, 182, 0.1),
-      transparent 28%
-    ),
-    linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
-  background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  opacity: 0.18;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 45px 45px;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  width: 360px;
-  height: 360px;
-  top: -120px;
-  right: -100px;
-  z-index: -1;
-  border-radius: 50%;
-  pointer-events: none;
-  background: rgba(139, 92, 246, 0.2);
-  filter: blur(90px);
-  animation: floatingGlow 8s ease-in-out infinite alternate;
-}
-
-button,
-input,
-textarea,
-select {
-  font-family: inherit;
-}
-
-button {
-  border: none;
-}
-
-input,
-textarea,
-select {
-  color: var(--text-primary);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: var(--text-muted);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ul,
-ol {
-  list-style-position: inside;
-}
-
-::selection {
-  color: white;
-  background: rgba(139, 92, 246, 0.8);
-}
-
-::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
-}
-
-::-webkit-scrollbar-track {
-  background: #080c18;
-}
-
-::-webkit-scrollbar-thumb {
-  border: 2px solid #080c18;
-  border-radius: 20px;
-  background: linear-gradient(var(--primary), var(--secondary));
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(var(--accent), var(--primary));
-}
-
 code {
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-family: "Courier New", monospace;
-  color: #c4b5fd;
-  background: rgba(139, 92, 246, 0.12);
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-@keyframes floatingGlow {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  to {
-    transform: translate3d(-80px, 80px, 0) scale(1.18);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulseGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
-  }
-
-  50% {
-    box-shadow: 0 0 35px rgba(139, 92, 246, 0.45);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+html,
+body,
+#root{
+    height:100%;
+    overflow-x:hidden;
 }

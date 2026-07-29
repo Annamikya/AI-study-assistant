@@ -58,6 +58,3 @@
     font-size: 14px;
     color: #9ca3af;
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.flashcard-front,.flashcard-back{background:linear-gradient(145deg,#122842,#0b1c31)!important;border:1px solid var(--border)!important;border-radius:24px!important;box-shadow:0 20px 55px rgba(0,0,0,.32)!important}.flashcard-front{border-top:3px solid var(--accent)!important}.flashcard-back{border-top:3px solid var(--accent-3)!important}.flashcard-front h3{color:var(--accent)!important}.flashcard-back h3{color:var(--accent-3)!important}.flashcard-front p,.flashcard-back p,.hint{color:var(--text)!important}

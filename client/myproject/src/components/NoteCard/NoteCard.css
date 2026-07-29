@@ -52,6 +52,3 @@
 .delete-btn:hover{
     background:#dc2626;
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.note-card{background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.88))!important;border:1px solid var(--border)!important;border-radius:20px!important;box-shadow:0 16px 42px rgba(0,0,0,.22)!important}.note-card:hover{border-color:rgba(255,202,114,.38)}.note-card h3{color:var(--warning)!important}.note-card p{color:var(--muted)!important}.edit-btn{background:rgba(105,240,214,.13)!important;color:var(--accent)!important;border:1px solid rgba(105,240,214,.25)!important}.delete-btn{background:rgba(255,111,145,.13)!important;color:var(--danger)!important;border:1px solid rgba(255,111,145,.25)!important}

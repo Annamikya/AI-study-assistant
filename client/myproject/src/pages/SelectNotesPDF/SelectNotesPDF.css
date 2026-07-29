@@ -102,6 +102,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.select-notes-page{color:var(--text)!important}.select-notes-header h1{color:var(--text)!important}.select-notes-header p,.no-pdfs-message{color:var(--muted)!important}.notes-pdf-card{background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.88))!important;border:1px solid var(--border)!important;color:var(--text)!important;box-shadow:0 16px 42px rgba(0,0,0,.22)!important}.notes-pdf-card:hover{border-color:rgba(255,138,200,.42)!important}.notes-pdf-card button{background:linear-gradient(135deg,var(--accent-3),var(--accent-2))!important;color:white!important}

@@ -1,209 +1,38 @@
 .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
   min-height: 100vh;
-  width: 100%;
-}
-
-.page-content {
-  width: 100%;
-  min-height: 100vh;
-  padding: 32px;
-  animation: fadeIn 0.45s ease;
-}
-
-.main-content {
-  min-height: 100vh;
-  margin-left: 250px;
-  padding: 90px 32px 32px;
-  transition: margin-left var(--transition);
-}
-
-.section {
-  width: 100%;
-  margin-bottom: 28px;
-}
-
-.section-heading {
-  margin-bottom: 18px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.35rem, 2vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.section-content {
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--bg-card);
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
-
-.primary-btn,
-.secondary-btn,
-.text-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 11px 20px;
-  border-radius: 12px;
-  font-size: 0.92rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition),
-    border-color var(--transition),
-    background var(--transition);
-}
-
-.primary-btn {
-  color: white;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  box-shadow: 0 10px 28px rgba(109, 40, 217, 0.32);
-}
-
-.primary-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(109, 40, 217, 0.48);
-}
-
-.primary-btn:active {
-  transform: translateY(0);
-}
-
-.secondary-btn {
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.secondary-btn:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-hover);
-  background: rgba(139, 92, 246, 0.13);
-}
-
-.text-button {
-  min-height: auto;
-  padding: 6px 8px;
-  color: #c4b5fd;
-  background: transparent;
-}
-
-.text-button:hover {
-  color: white;
-  background: rgba(139, 92, 246, 0.12);
-}
-
-.empty-state,
-.dashboard-state {
   display: flex;
-  min-height: 260px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding: 35px;
-  text-align: center;
-  color: var(--text-secondary);
-  border: 1px dashed rgba(139, 92, 246, 0.35);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.035);
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.empty-message {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
+.App-link {
+  color: #61dafb;
 }
 
-.dashboard-loader,
-.profile-loader,
-.settings-loader,
-.quiz-loading-spinner {
-  width: 42px;
-  height: 42px;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  border-top-color: var(--primary);
-  border-radius: 50%;
-  animation: loaderSpin 0.8s linear infinite;
-}
-
-.dashboard-error,
-.quiz-error-message,
-.notes-error-message,
-.profile-error-message,
-.settings-error {
-  padding: 13px 16px;
-  border: 1px solid rgba(248, 113, 113, 0.32);
-  border-radius: 12px;
-  color: #fecaca;
-  background: rgba(127, 29, 29, 0.22);
-}
-
-.profile-success-message,
-.settings-success {
-  padding: 13px 16px;
-  border: 1px solid rgba(74, 222, 128, 0.3);
-  border-radius: 12px;
-  color: #bbf7d0;
-  background: rgba(20, 83, 45, 0.24);
-}
-
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.55;
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 3px solid rgba(34, 211, 238, 0.28);
-  outline-offset: 3px;
-}
-
-@keyframes loaderSpin {
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@media (max-width: 992px) {
-  .main-content {
-    margin-left: 0;
-    padding: 85px 22px 25px;
-  }
-
-  .page-content {
-    padding: 24px;
-  }
-}
-
-@media (max-width: 576px) {
-  .main-content {
-    padding: 78px 15px 20px;
-  }
-
-  .page-content {
-    padding: 18px 14px;
-  }
-
-  .section-content {
-    padding: 18px;
-    border-radius: 18px;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    width: 100%;
   }
 }

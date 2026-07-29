@@ -250,6 +250,3 @@ html {
     padding: 24px;
   }
 }
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.home-page{background:#07111f!important;color:var(--text)!important}.hero{background:radial-gradient(circle at 72% 20%,rgba(127,140,255,.22),transparent 32%),radial-gradient(circle at 15% 50%,rgba(105,240,214,.15),transparent 30%),#07111f!important}.hero h1,.features-section h2,.features-section h3{color:var(--text)!important}.hero p,.features-section p{color:var(--muted)!important}.primary-btn,.signup-btn{background:linear-gradient(135deg,var(--accent),#80e6ff)!important;color:#06131d!important}.secondary-btn{background:rgba(255,255,255,.05)!important;color:var(--text)!important;border:1px solid var(--border)!important}.features-section{background:#091525!important}.feature-card{background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.88))!important;border:1px solid var(--border)!important;box-shadow:0 16px 42px rgba(0,0,0,.22)!important}.features-cta{background:linear-gradient(135deg,rgba(105,240,214,.12),rgba(127,140,255,.14))!important;border:1px solid var(--border)!important}

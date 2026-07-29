@@ -124,3 +124,9 @@
   }
 
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+
+.pdf-card{background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.88))!important;border:1px solid var(--border)!important;border-radius:22px!important;box-shadow:0 16px 42px rgba(0,0,0,.24)!important;color:var(--text)!important;position:relative;overflow:hidden}
+.pdf-card::before{content:'';position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--accent-3))}.pdf-card:hover{border-color:var(--border-bright)!important;box-shadow:0 22px 55px rgba(0,0,0,.34)!important}.pdf-icon{filter:drop-shadow(0 10px 14px rgba(0,0,0,.25))}.pdf-card h3{color:var(--text)!important}.pdf-card p{color:var(--muted)!important}.pdf-buttons button{border:1px solid transparent!important;border-radius:11px!important}.open-btn{background:rgba(127,140,255,.16)!important;color:#b8c0ff!important;border-color:rgba(127,140,255,.28)!important}.summary-btn{background:rgba(105,240,214,.13)!important;color:var(--accent)!important;border-color:rgba(105,240,214,.25)!important}.quiz-btn{background:rgba(255,202,114,.14)!important;color:var(--warning)!important;border-color:rgba(255,202,114,.25)!important}.chat-btn{background:rgba(255,138,200,.13)!important;color:var(--accent-3)!important;border-color:rgba(255,138,200,.25)!important}.flash-btn{background:rgba(128,230,255,.13)!important;color:#80e6ff!important;border-color:rgba(128,230,255,.25)!important}.delete-btn{background:rgba(255,111,145,.13)!important;color:var(--danger)!important;border-color:rgba(255,111,145,.25)!important}
+

@@ -81,3 +81,14 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+
+.register-container { min-height:100vh; background:radial-gradient(circle at 82% 12%,rgba(255,138,200,.14),transparent 28%),radial-gradient(circle at 12% 88%,rgba(105,240,214,.17),transparent 32%),#07111f!important; padding:24px; }
+.register-card { max-width:470px!important;padding:42px!important;border:1px solid var(--border)!important;border-radius:28px!important;background:linear-gradient(145deg,rgba(18,36,59,.94),rgba(9,23,40,.9))!important;box-shadow:var(--shadow)!important;backdrop-filter:blur(24px)}
+.register-card::before{content:'CREATE YOUR WORKSPACE';display:block;width:max-content;margin:0 auto 16px;color:var(--accent-3);font-size:11px;font-weight:700;letter-spacing:.18em}
+.register-card h1{color:var(--text)!important}.register-card p,.terms,.login-text{color:var(--muted)!important}
+.register-card .input-group{padding:14px 16px!important;border:1px solid var(--border)!important;border-radius:14px!important;background:rgba(4,14,27,.55)!important}.register-card .input-group:focus-within{border-color:var(--accent-3)!important;box-shadow:0 0 0 4px rgba(255,138,200,.1)}.register-card input{color:var(--text)!important;background:transparent!important}
+.register-btn{padding:14px!important;border-radius:14px!important;background:linear-gradient(135deg,var(--accent-3),var(--accent-2))!important;color:#fff!important;font-weight:800!important;box-shadow:0 12px 30px rgba(127,140,255,.2)}
+.login-text a{color:var(--accent)!important}@media(max-width:520px){.register-card{padding:30px 22px!important}}
+

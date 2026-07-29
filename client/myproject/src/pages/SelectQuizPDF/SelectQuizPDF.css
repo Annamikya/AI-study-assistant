@@ -114,3 +114,6 @@ grid-template-columns:1fr;
 }
 
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+.select-quiz-page{color:var(--text)!important}.select-quiz-heading h1{color:var(--text)!important}.select-quiz-heading p,.no-pdfs-message{color:var(--muted)!important}.quiz-pdf-card{background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.88))!important;border:1px solid var(--border)!important;color:var(--text)!important;box-shadow:0 16px 42px rgba(0,0,0,.22)!important}.quiz-pdf-card:hover{border-color:rgba(255,202,114,.42)!important}.quiz-pdf-card button{background:linear-gradient(135deg,var(--warning),#ffdf9d)!important;color:#2d2108!important}

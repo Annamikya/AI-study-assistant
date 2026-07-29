@@ -67,3 +67,8 @@
 .selected-file h4 {
   margin-bottom: 8px;
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+
+.upload-card{max-width:700px!important;background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.86))!important;border:1px dashed rgba(105,240,214,.42)!important;border-radius:28px!important;box-shadow:var(--shadow)!important;position:relative;overflow:hidden}.upload-card::after{content:'';position:absolute;width:220px;height:220px;right:-120px;top:-120px;border-radius:50%;background:rgba(105,240,214,.1)}.upload-icon{filter:drop-shadow(0 12px 20px rgba(105,240,214,.18))}.upload-card h2{color:var(--text)!important}.upload-card p{color:var(--muted)!important}.browse-btn,.upload-btn{border-radius:13px!important;font-weight:700!important}.browse-btn{background:rgba(127,140,255,.16)!important;color:#c4caff!important;border:1px solid rgba(127,140,255,.32)!important}.upload-btn{background:linear-gradient(135deg,var(--accent),#80e6ff)!important;color:#06131d!important;box-shadow:0 12px 28px rgba(105,240,214,.18)}.selected-file{background:rgba(255,255,255,.05)!important;border:1px solid var(--border);color:var(--text)!important;border-radius:14px!important}
+

@@ -1,1 +1,89 @@
-.select-notes-page{display:flex;flex-direction:column;gap:19px}.select-notes-header p{color:var(--muted);margin-top:5px}.notes-pdf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:17px}.notes-pdf-card{background:#fff;border:1px solid var(--border);border-radius:19px;padding:21px;box-shadow:var(--shadow-sm);cursor:pointer;transition:.22s}.notes-pdf-card:hover{transform:translateY(-4px);border-color:#bbb5ef;box-shadow:var(--shadow)}.notes-pdf-card h3{font-size:1rem;overflow-wrap:anywhere}.notes-pdf-card p{color:var(--muted);font-size:.84rem;margin-top:6px}.notes-loading,.no-pdfs-message{padding:40px;text-align:center;color:var(--muted)}
+.select-notes-page {
+  padding: 20px;
+}
+
+.select-notes-header {
+  margin-bottom: 24px;
+}
+
+.select-notes-header h1 {
+  margin: 0 0 8px;
+  color: #1f2937;
+}
+
+.select-notes-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.notes-pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.notes-pdf-card {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.notes-pdf-card .pdf-icon {
+  margin-bottom: 12px;
+  font-size: 38px;
+}
+
+.notes-pdf-card h3 {
+  margin: 0 0 10px;
+  color: #1f2937;
+}
+
+.notes-pdf-card p {
+  margin: 6px 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.notes-pdf-card button,
+.no-pdfs-message button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.notes-pdf-card button:hover,
+.no-pdfs-message button:hover {
+  background: #6d28d9;
+}
+
+.notes-pdf-card button:disabled {
+  background: #c4b5fd;
+  cursor: not-allowed;
+}
+
+.notes-error-message {
+  margin-bottom: 18px;
+  padding: 12px 15px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+}
+
+.notes-loading,
+.no-pdfs-message {
+  padding: 35px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}

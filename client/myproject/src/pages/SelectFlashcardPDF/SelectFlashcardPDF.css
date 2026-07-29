@@ -1,1 +1,65 @@
-.select-flashcard-page{display:flex;flex-direction:column;gap:18px}.select-flashcard-description{color:var(--muted)}.flashcard-pdf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:17px}.flashcard-pdf-card{background:#fff;border:1px solid var(--border);border-radius:19px;padding:21px;box-shadow:var(--shadow-sm);cursor:pointer;transition:.22s}.flashcard-pdf-card:hover{transform:translateY(-4px);border-color:#bbb5ef;box-shadow:var(--shadow)}.flashcard-pdf-card h3{font-size:1rem;overflow-wrap:anywhere}.flashcard-pdf-card p{color:var(--muted);font-size:.84rem;margin-top:6px}
+.select-flashcard-page {
+  padding: 20px;
+}
+
+.select-flashcard-page h1 {
+  margin: 0 0 8px;
+  color: #1f2937;
+}
+
+.select-flashcard-description {
+  margin-bottom: 24px;
+  color: #6b7280;
+}
+
+.flashcard-pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.flashcard-pdf-card {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.flashcard-pdf-card .pdf-icon {
+  margin-bottom: 12px;
+  font-size: 38px;
+}
+
+.flashcard-pdf-card h3 {
+  margin: 0 0 10px;
+  color: #1f2937;
+}
+
+.flashcard-pdf-card p {
+  margin: 5px 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.flashcard-pdf-card button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.flashcard-pdf-card button:hover {
+  background: #6d28d9;
+}
+
+.flashcard-pdf-card button:disabled {
+  background: #c4b5fd;
+  cursor: not-allowed;
+}

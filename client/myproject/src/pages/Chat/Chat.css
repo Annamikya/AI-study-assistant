@@ -58,3 +58,6 @@
 .chat-input-area button:hover{
     background:#4338ca;
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+.chat-page,.chat-container{color:var(--text)!important}.chat-container{background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,24,42,.88))!important;border:1px solid var(--border)!important;border-radius:24px!important;box-shadow:var(--shadow)!important}.chat-header{border-bottom:1px solid var(--border)!important}.chat-header h1,.chat-header h2{color:var(--text)!important}.chat-input-area{border-top:1px solid var(--border)!important}.chat-input-area input{background:rgba(4,14,27,.62)!important;color:var(--text)!important;border:1px solid var(--border)!important}.chat-input-area button{background:linear-gradient(135deg,var(--accent),#80e6ff)!important;color:#06131d!important;font-weight:800!important}

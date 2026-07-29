@@ -88,3 +88,19 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+
+.login-container { min-height:100vh; background:radial-gradient(circle at 18% 15%,rgba(105,240,214,.18),transparent 30%),radial-gradient(circle at 85% 80%,rgba(127,140,255,.2),transparent 34%),#07111f!important; padding:24px; position:relative; overflow:hidden; }
+.login-container::before,.login-container::after { content:''; position:absolute; width:330px;height:330px;border-radius:50%;filter:blur(12px);opacity:.25; }
+.login-container::before{background:var(--accent);left:-180px;top:-150px}.login-container::after{background:var(--accent-2);right:-180px;bottom:-150px}
+.login-card { max-width:440px!important; padding:44px!important; border:1px solid var(--border)!important; border-radius:28px!important; background:linear-gradient(145deg,rgba(18,36,59,.92),rgba(9,23,40,.88))!important; box-shadow:var(--shadow)!important; backdrop-filter:blur(24px); position:relative; }
+.login-card::before { content:'STUDY SMARTER'; display:block; width:max-content; margin:0 auto 18px; color:var(--accent); font-size:11px; font-weight:700; letter-spacing:.22em; }
+.login-card h1{color:var(--text)!important;font-size:34px}.login-card p{color:var(--muted)!important}
+.input-group { padding:14px 16px!important;border:1px solid var(--border)!important;border-radius:14px!important;background:rgba(4,14,27,.55)!important;transition:.2s }
+.input-group:focus-within { border-color:var(--accent)!important; box-shadow:0 0 0 4px rgba(105,240,214,.1); }
+.input-group input{color:var(--text)!important;background:transparent!important}.input-icon{color:var(--accent)!important}.login-options{color:var(--muted)}.forgot-link,.register-text a{color:var(--accent)!important}
+.login-btn { padding:14px!important;border-radius:14px!important;background:linear-gradient(135deg,var(--accent),#80e6ff)!important;color:#06131d!important;font-weight:800!important;box-shadow:0 12px 30px rgba(105,240,214,.18)}
+.login-btn:hover{box-shadow:0 16px 36px rgba(105,240,214,.28)!important}.register-text{color:var(--muted)!important}
+@media(max-width:520px){.login-card{padding:30px 22px!important;border-radius:22px!important}}
+

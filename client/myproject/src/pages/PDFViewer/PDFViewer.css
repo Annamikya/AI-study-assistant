@@ -69,3 +69,6 @@
     background: white;
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+.pdf-viewer-page{color:var(--text)!important}.pdf-viewer-header{background:linear-gradient(145deg,rgba(16,34,57,.94),rgba(10,24,42,.9))!important;border:1px solid var(--border)!important;color:var(--text)!important}.pdf-viewer-message{color:var(--muted)!important}

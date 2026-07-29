@@ -11,3 +11,6 @@
     color:#6b7280;
     margin-bottom:30px;
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+.upload-page{min-height:calc(100vh - 80px);padding:28px;color:var(--text)}

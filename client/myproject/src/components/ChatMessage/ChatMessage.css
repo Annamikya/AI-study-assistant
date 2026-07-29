@@ -41,3 +41,6 @@
         transform: translateY(0);
     }
 }
+
+/* ===== Aurora AI redesign (CSS only) ===== */
+.chat-message{border-radius:18px!important;box-shadow:0 10px 28px rgba(0,0,0,.15)}.user-message{background:linear-gradient(135deg,var(--accent-2),#6976e8)!important;color:white!important;border-bottom-right-radius:5px!important}.ai-message{background:rgba(16,34,57,.86)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-bottom-left-radius:5px!important}.message-header{color:inherit!important;opacity:.75}

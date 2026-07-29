@@ -147,3 +147,59 @@ button:disabled {
     width: 100%;
   }
 }
+/* Universal Button Style */
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.generate-btn,
+.generate-button,
+.quiz-btn,
+.quiz-button,
+.flashcard-btn,
+.flashcard-button,
+.notes-btn,
+.notes-button,
+.create-btn,
+.action-btn,
+.submit-btn {
+  background: #7c3aed;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.generate-btn:hover,
+.generate-button:hover,
+.quiz-btn:hover,
+.quiz-button:hover,
+.flashcard-btn:hover,
+.flashcard-button:hover,
+.notes-btn:hover,
+.notes-button:hover,
+.create-btn:hover,
+.action-btn:hover,
+.submit-btn:hover {
+  background: #6d28d9;
+}
+
+.generate-btn:disabled,
+.generate-button:disabled,
+.quiz-btn:disabled,
+.quiz-button:disabled,
+.flashcard-btn:disabled,
+.flashcard-button:disabled,
+.notes-btn:disabled,
+.notes-button:disabled {
+  background: #c4b5fd;
+  cursor: not-allowed;
+}

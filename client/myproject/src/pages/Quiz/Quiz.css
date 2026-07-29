@@ -1,46 +1,24 @@
-.quiz-page{
-    display:flex;
-    justify-content:center;
-    padding:40px;
+.quiz-container{
+    background:#ffffff;
+    color:#1f2937;
 }
 
 .quiz-card{
-    width:700px;
-    background:#fff;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 0 15px rgba(0,0,0,.1);
+    background:#ffffff;
+    color:#1f2937;
 }
 
-.option{
-    display:block;
-    margin:15px 0;
-    cursor:pointer;
+.quiz-question{
+    color:#111827;
+    font-weight:600;
 }
 
-.option input{
-    margin-right:10px;
+.quiz-option{
+    background:#f8fafc;
+    color:#111827;
+    border:1px solid #d1d5db;
 }
 
-.next-btn{
-    margin-top:20px;
-    padding:10px 25px;
-    border:none;
-    background:#4f46e5;
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
+.quiz-option:hover{
+    background:#ede9fe;
 }
-
-.next-btn:disabled{
-    background:gray;
-    cursor:not-allowed;
-}
-
-.quiz-result{
-    text-align:center;
-    margin-top:80px;
-}
-
-/* ===== Aurora AI redesign (CSS only) ===== */
-.quiz-page{color:var(--text)!important}.progress-header{color:var(--muted)!important}.progress-container{background:rgba(255,255,255,.07)!important}.progress-bar{background:linear-gradient(90deg,var(--accent-2),var(--accent))!important;box-shadow:0 0 18px rgba(105,240,214,.25)}.quiz-result{background:linear-gradient(145deg,rgba(16,34,57,.94),rgba(10,24,42,.9))!important;border:1px solid var(--border)!important;color:var(--text)!important;box-shadow:var(--shadow)!important}

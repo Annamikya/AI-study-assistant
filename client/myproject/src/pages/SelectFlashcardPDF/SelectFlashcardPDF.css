@@ -1,43 +1,60 @@
 .select-flashcard-page {
-  padding: 20px;
+  padding: 30px;
+  min-height: 100vh;
 }
 
 .select-flashcard-page h1 {
-  margin: 0 0 8px;
+  margin-bottom: 8px;
+  font-size: 32px;
   color: #1f2937;
 }
 
 .select-flashcard-description {
-  margin-bottom: 24px;
+  margin-bottom: 30px;
   color: #6b7280;
+  font-size: 16px;
 }
 
 .flashcard-pdf-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
+  gap: 24px;
 }
 
 .flashcard-pdf-card {
-  padding: 22px;
   background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px
+    rgba(0, 0, 0, 0.08);
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.flashcard-pdf-card .pdf-icon {
-  margin-bottom: 12px;
-  font-size: 38px;
+.flashcard-pdf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px
+    rgba(0, 0, 0, 0.12);
+}
+
+.pdf-icon {
+  font-size: 46px;
+  margin-bottom: 14px;
 }
 
 .flashcard-pdf-card h3 {
-  margin: 0 0 10px;
-  color: #1f2937;
+  margin-bottom: 14px;
+  color: #111827;
+  font-size: 20px;
+  word-break: break-word;
 }
 
 .flashcard-pdf-card p {
-  margin: 5px 0;
+  margin: 8px 0;
   color: #6b7280;
   font-size: 14px;
 }
@@ -45,21 +62,42 @@
 .flashcard-pdf-card button {
   width: 100%;
   margin-top: 18px;
-  padding: 11px 16px;
+  padding: 12px 16px;
   border: none;
-  border-radius: 8px;
-  background: #7c3aed;
-  color: #ffffff;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: white;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.3s ease,
+    transform 0.2s ease;
 }
 
-.flashcard-pdf-card button:hover {
-  background: #6d28d9;
+.flashcard-pdf-card button:hover:not(:disabled) {
+  background: #4338ca;
+  transform: scale(1.02);
 }
 
 .flashcard-pdf-card button:disabled {
-  background: #c4b5fd;
   cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.flashcard-pdf-grid h2 {
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .select-flashcard-page {
+    padding: 20px;
+  }
+
+  .select-flashcard-page h1 {
+    font-size: 26px;
+  }
+
+  .flashcard-pdf-grid {
+    grid-template-columns: 1fr;
+  }
 }

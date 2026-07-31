@@ -1,1 +1,83 @@
-.register-container{min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at 80% 10%,rgba(109,93,252,.16),transparent 28%),radial-gradient(circle at 10% 90%,rgba(19,184,166,.13),transparent 30%)}.register-card{width:min(480px,100%);background:rgba(255,255,255,.96);border:1px solid #fff;border-radius:26px;padding:34px;box-shadow:0 28px 70px rgba(50,45,110,.15);animation:fadeUp .45s ease}.register-card h2{text-align:center;font-size:1.75rem;margin-bottom:7px}.register-card>p{text-align:center;color:var(--muted);margin-bottom:22px}.register-card .input-group{position:relative;margin:14px 0}.register-card input{width:100%;height:49px;padding:0 15px 0 44px;border:1px solid var(--border);border-radius:13px;outline:0}.register-card input:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(109,93,252,.1)}.register-card .input-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#8d89b8}.terms{font-size:.86rem;color:var(--muted);margin:14px 0 18px}.register-btn{width:100%;height:50px;border:0;border-radius:13px;color:#fff;font-weight:800;background:linear-gradient(135deg,var(--primary),#8275ff);box-shadow:0 12px 24px rgba(109,93,252,.24)}.login-text{text-align:center;margin-top:18px;color:var(--muted)}.login-text a{color:var(--primary);font-weight:700}@media(max-width:480px){.register-card{padding:27px 20px}}
+.register-container {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 450px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.register-card h1 {
+  text-align: center;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.register-card p {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 18px;
+}
+
+.input-icon {
+  color: #6b7280;
+  margin-right: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.terms {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #4338ca;
+}
+
+.login-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-text a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}

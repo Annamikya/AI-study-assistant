@@ -1,205 +1,38 @@
-:root {
-  --primary: #7c3aed;
-  --primary-dark: #6d28d9;
-  --secondary: #10b981;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --surface: #ffffff;
-  --border: #e5e7eb;
-  --background: #f8fafc;
-  --radius: 14px;
-  --shadow-sm: 0 3px 12px rgba(0, 0, 0, 0.06);
-  --shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: var(--background);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-}
-
 .App {
-  min-height: 100vh;
-}
-
-.main-content {
-  min-height: 100vh;
-  margin-left: 250px;
-  padding: 88px 28px 30px;
-}
-
-.page-content {
-  width: 100%;
-}
-
-.section {
-  margin-bottom: 25px;
-}
-
-.section-heading {
-  margin-bottom: 14px;
-  font-size: 1.35rem;
-  color: var(--text);
-}
-
-.section-content {
-  padding: 22px;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-}
-
-button,
-.primary-btn,
-.secondary-btn,
-.text-button {
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.primary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 11px 18px;
-  border: none;
-  border-radius: 8px;
-  background: var(--primary);
-  color: #ffffff;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.primary-btn:hover {
-  background: var(--primary-dark);
-}
-
-.secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 18px;
-  border: 1px solid #c4b5fd;
-  border-radius: 8px;
-  background: #f5f3ff;
-  color: var(--primary);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.secondary-btn:hover {
-  background: #ede9fe;
-}
-
-.text-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: transparent;
-  color: var(--primary);
-  padding: 8px 10px;
-  font-weight: 600;
-}
-
-button:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-.empty-state,
-.dashboard-state {
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
-  background: #ffffff;
-  border: 1px dashed #cbd5e1;
-  border-radius: var(--radius);
-  color: var(--muted);
-  padding: 30px;
 }
 
-@media (max-width: 992px) {
-  .main-content {
-    margin-left: 0;
-    padding: 82px 18px 24px;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
 }
 
-@media (max-width: 576px) {
-  .main-content {
-    padding: 76px 12px 18px;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-
-  .primary-btn,
-  .secondary-btn {
-    width: 100%;
+  to {
+    transform: rotate(360deg);
   }
-}
-/* Universal Button Style */
-
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: 0.3s ease;
-}
-
-.generate-btn,
-.generate-button,
-.quiz-btn,
-.quiz-button,
-.flashcard-btn,
-.flashcard-button,
-.notes-btn,
-.notes-button,
-.create-btn,
-.action-btn,
-.submit-btn {
-  background: #7c3aed;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.generate-btn:hover,
-.generate-button:hover,
-.quiz-btn:hover,
-.quiz-button:hover,
-.flashcard-btn:hover,
-.flashcard-button:hover,
-.notes-btn:hover,
-.notes-button:hover,
-.create-btn:hover,
-.action-btn:hover,
-.submit-btn:hover {
-  background: #6d28d9;
-}
-
-.generate-btn:disabled,
-.generate-button:disabled,
-.quiz-btn:disabled,
-.quiz-button:disabled,
-.flashcard-btn:disabled,
-.flashcard-button:disabled,
-.notes-btn:disabled,
-.notes-button:disabled {
-  background: #c4b5fd;
-  cursor: not-allowed;
 }

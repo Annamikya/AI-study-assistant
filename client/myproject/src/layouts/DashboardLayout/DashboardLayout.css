@@ -1,1 +1,17 @@
-.dashboard-layout{min-height:100vh}.main-content{background:transparent}.page-content{max-width:1450px;margin:0 auto}
+.dashboard-layout{
+    display:flex;
+}
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.page-content{
+    padding:25px;
+    flex:1;
+    overflow-y:auto;
+}
